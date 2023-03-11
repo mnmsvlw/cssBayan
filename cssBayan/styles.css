@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container { 
+    width: 50%;
+    margin: 0 auto;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+}
+
+.content:hover {
+    cursor: pointer;
+}
+
+.meme-label {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    color: blue;
+    height: 24px;
+}
+
+.meme-content {
+    max-height: 0;
+    opacity: 0;
+    max-width: 0;
+    transition: all .7s;
+}
+
+
+.content:hover .meme-content,
+input:checked ~ .meme-content {
+    max-width: 100vw;
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.container:hover .meme-label {
+    color: black;
+}
+
+.container input:checked ~ .meme-label {
+    color: black;
+}
+
+/* .container:hover input ~ .meme-label::after {
+    content: '+';
+}
+
+.container:hover input:checked ~ .meme-label::after {
+    content: 'X';
+} */
+
+.icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(../cssBayan/assets/svg/xmark-solid.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+}
+
+.container:hover input ~ .meme-label .icon {
+    display: block;
+    transform: rotate(45deg);
+} 
+
+.container:hover input:checked ~ .meme-label .icon {
+    display: block;
+    transform: rotate(0deg);   
+}
+
+  
+
+
+
